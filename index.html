@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sami Azraf | Portfolio</title>
+  <meta name="description" content="Sami Azraf - Computer Science & Engineering student at BUP. Full-stack developer, IoT enthusiast, hackathon finalist." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- 3D Canvas Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Cursor Glow -->
+  <div class="cursor-glow"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">SA<span>.</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">
+          <span class="name-part">Sami</span>
+          <span class="name-part accent">Azraf</span>
+        </h1>
+        <div class="hero-title-wrapper">
+          <span class="typed-text" id="typed-text"></span>
+          <span class="cursor-blink">|</span>
+        </div>
+        <p class="hero-desc">
+          Computer Science & Engineering student at Bangladesh University of Professionals.
+          Building full-stack apps, exploring IoT, and competing in AI & data hackathons.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">
+            <span>View Projects</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <span>Get in Touch</span>
+          </a>
+        </div>
+        <div class="hero-social">
+          <a href="https://github.com/SamiAzraf2000" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/sami-azraf" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:azrafsami2002@gmail.com" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="photo-frame">
+          <div class="photo-glow"></div>
+          <img src="sami_photo.png" alt="Sami Azraf" class="hero-photo" />
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- About / Education -->
+  <section id="about" class="section about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">01 — About</span>
+        <h2 class="section-title">Education & Background</h2>
+        <p class="section-subtitle">Building a strong foundation in computer science</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card glass">
+          <div class="about-icon"><i class="fas fa-university"></i></div>
+          <h3>Bachelor of CSE</h3>
+          <p class="institution">Bangladesh University of Professionals (BUP)</p>
+          <p class="period">Jan 2024 – Dec 2027 (Expected)</p>
+          <p class="detail">CGPA: <strong>3.67 / 4.00</strong> (up to 4th semester)</p>
+          <p class="location"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</p>
+        </div>
+
+        <div class="about-card glass">
+          <div class="about-icon"><i class="fas fa-school"></i></div>
+          <h3>Higher Secondary Certificate</h3>
+          <p class="institution">Adamjee Cantonment College</p>
+          <p class="period">2020 – 2022</p>
+          <p class="detail">GPA: <strong>5.00 / 5.00</strong> · Group: Science</p>
+          <p class="location"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</p>
+        </div>
+
+        <div class="about-card glass">
+          <div class="about-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h3>Secondary School Certificate</h3>
+          <p class="institution">Milestone School & College, Gazipur</p>
+          <p class="period">2018 – 2020</p>
+          <p class="detail">GPA: <strong>5.00 / 5.00</strong> · Group: Science</p>
+          <p class="location"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">02 — Skills</span>
+        <h2 class="section-title">Technical Arsenal</h2>
+        <p class="section-subtitle">Languages, frameworks & tools I work with</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-category glass">
+          <div class="skill-cat-header">
+            <i class="fas fa-code"></i>
+            <h3>Languages</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag" data-level="90">C</span>
+            <span class="skill-tag" data-level="88">C++</span>
+            <span class="skill-tag" data-level="92">Python</span>
+            <span class="skill-tag" data-level="85">Java</span>
+            <span class="skill-tag" data-level="87">JavaScript</span>
+          </div>
+        </div>
+
+        <div class="skill-category glass">
+          <div class="skill-cat-header">
+            <i class="fas fa-server"></i>
+            <h3>Backend</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">FastAPI</span>
+            <span class="skill-tag">PostgreSQL</span>
+          </div>
+        </div>
+
+        <div class="skill-category glass">
+          <div class="skill-cat-header">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Frontend</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">React.js</span>
+            <span class="skill-tag">HTML5 / CSS3</span>
+          </div>
+        </div>
+
+        <div class="skill-category glass">
+          <div class="skill-cat-header">
+            <i class="fas fa-microchip"></i>
+            <h3>IoT & Embedded</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Arduino</span>
+            <span class="skill-tag">ESP32</span>
+          </div>
+        </div>
+
+        <div class="skill-category glass">
+          <div class="skill-cat-header">
+            <i class="fas fa-tools"></i>
+            <h3>Tools & Platforms</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Linux</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">03 — Projects</span>
+        <h2 class="section-title">Featured Work</h2>
+        <p class="section-subtitle">Selected projects showcasing full-stack & algorithmic skills</p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card glass" data-tilt>
+          <div class="project-header">
+            <div class="project-icon"><i class="fas fa-leaf"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/SamiAzraf2000" target="_blank" rel="noopener" title="Source"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Food Waste Tracker</h3>
+          <p class="project-desc">Full-stack web application for households to track inventory expiry dates and reduce food waste.</p>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>Django</span>
+            <span>PostgreSQL</span>
+          </div>
+        </article>
+
+        <article class="project-card glass" data-tilt>
+          <div class="project-header">
+            <div class="project-icon"><i class="fas fa-film"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/SamiAzraf2000" target="_blank" rel="noopener" title="Source"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Hollywood Movie History Tracker</h3>
+          <p class="project-desc">Web app fetching TMDb film data to search titles, log watch histories locally, and export grouped lists.</p>
+          <div class="project-tech">
+            <span>JavaScript</span>
+            <span>TMDb API</span>
+            <span>HTML5/CSS3</span>
+          </div>
+        </article>
+
+        <article class="project-card glass" data-tilt>
+          <div class="project-header">
+            <div class="project-icon"><i class="fas fa-search"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/SamiAzraf2000" target="_blank" rel="noopener" title="Source"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3>ScholarForum</h3>
+          <p class="project-desc">Database-driven academic search engine indexing research papers for fast publication discovery.</p>
+          <div class="project-tech">
+            <span>React.js</span>
+            <span>FastAPI</span>
+            <span>PostgreSQL</span>
+          </div>
+        </article>
+
+        <article class="project-card glass" data-tilt>
+          <div class="project-header">
+            <div class="project-icon"><i class="fas fa-comments"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/SamiAzraf2000" target="_blank" rel="noopener" title="Source"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Review Summarizer</h3>
+          <p class="project-desc">Desktop tool analyzing YouTube comment sentiment and evaluating textual similarity via LCS algorithms.</p>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>YouTube Data API</span>
+            <span>LCS</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section id="achievements" class="section achievements">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">04 — Achievements</span>
+        <h2 class="section-title">Honors & Recognition</h2>
+        <p class="section-subtitle">Competitive programming & hackathon placements</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item glass">
+          <div class="timeline-marker">🏆</div>
+          <div class="timeline-content">
+            <span class="timeline-date">Jul 2026</span>
+            <h3>CUET AI Hackathon — 9th Place</h3>
+            <p>Placed 9th nationwide in the CUET AI Hackathon.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item glass">
+          <div class="timeline-marker">🥇</div>
+          <div class="timeline-content">
+            <span class="timeline-date">Jul 2026</span>
+            <h3>Data Hackathon, 5th National Data Science Summit — Top 40</h3>
+            <p>Placed among the top 40 teams nationwide at Daffodil International University.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item glass">
+          <div class="timeline-marker">🎯</div>
+          <div class="timeline-content">
+            <span class="timeline-date">Nov 2025</span>
+            <h3>BUBT InnovateX Hackathon 2025 — Finalist</h3>
+            <p>Placed among the top 50 teams nationwide, competing against teams from across Bangladesh.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item glass">
+          <div class="timeline-marker">💡</div>
+          <div class="timeline-content">
+            <span class="timeline-date">Nov 2025</span>
+            <h3>Solvio AI Hackathon 2025 — Top 100</h3>
+            <p>Placed among the top 100 teams nationwide.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item glass">
+          <div class="timeline-marker">💻</div>
+          <div class="timeline-content">
+            <span class="timeline-date">Dec 2024</span>
+            <h3>ICPC Asia Regional 2024 Preliminary Round — Rank 864</h3>
+            <p>Participated as a team and secured 864th position.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Co-curricular -->
+  <section id="activities" class="section activities">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">05 — Activities</span>
+        <h2 class="section-title">Co-curricular Involvement</h2>
+      </div>
+
+      <div class="activities-grid">
+        <div class="activity-card glass">
+          <div class="activity-icon"><i class="fas fa-terminal"></i></div>
+          <h3>BUP Computer Programming Club</h3>
+          <span class="role">General Member · 2025 – Present</span>
+          <p>Participates in programming contests and events to enhance competitive programming skills.</p>
+        </div>
+        <div class="activity-card glass">
+          <div class="activity-icon"><i class="fas fa-microchip"></i></div>
+          <h3>IEEE BUP</h3>
+          <span class="role">General Member · 2024 – Present</span>
+          <p>Contributed to technical builds and event organization for club activities and competitions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">06 — Contact</span>
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-subtitle">Open to opportunities, collaborations & conversations</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info glass">
+          <h3>Get in touch</h3>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <span class="label">Email</span>
+              <a href="mailto:azrafsami2002@gmail.com">azrafsami2002@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <span class="label">Phone</span>
+              <a href="tel:+8801326888543">+880 1326-888543</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <span class="label">Location</span>
+              <span>Lift-1, House-52, Road-11, Sector-13, Uttara, Dhaka</span>
+            </div>
+          </div>
+          <div class="contact-social">
+            <a href="https://github.com/SamiAzraf2000" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/sami-azraf" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:azrafsami2002@gmail.com"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="references glass">
+          <h3>References</h3>
+          <div class="ref-card">
+            <h4>Iyolita Islam</h4>
+            <p>Lecturer, Dept. of CSE</p>
+            <p>Bangladesh University of Professionals</p>
+            <a href="mailto:iyolitaislam@bup.edu.bd">iyolitaislam@bup.edu.bd</a>
+          </div>
+          <div class="ref-card">
+            <h4>Rumana Yasmin</h4>
+            <p>Lecturer, Dept. of CSE</p>
+            <p>Bangladesh University of Professionals</p>
+            <a href="mailto:rumana.yasmin@bup.edu.bd">rumana.yasmin@bup.edu.bd</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>Designed & built with <span class="heart">♥</span> by Sami Azraf</p>
+      <p class="copyright">© 2026 Sami Azraf. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
