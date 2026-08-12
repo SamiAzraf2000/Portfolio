@@ -904,6 +904,51 @@ body {
   opacity: 0.7;
 }
 
+/* ===== Music Toggle ===== */
+.music-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+.music-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(99, 179, 255, 0.2);
+}
+
+.music-toggle.playing {
+  color: var(--accent);
+  border-color: var(--accent);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 4px 20px rgba(99, 179, 255, 0.15);
+  }
+  50% {
+    box-shadow: 0 4px 30px rgba(99, 179, 255, 0.4);
+  }
+}
+
 /* ===== Animations on Scroll ===== */
 .fade-up {
   opacity: 0;

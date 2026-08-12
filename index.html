@@ -448,10 +448,20 @@
     </div>
   </section>
 
+  <!-- Background Music -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="assets/background-music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Music Toggle Button -->
+  <button id="music-toggle" class="music-toggle" aria-label="Toggle background music" title="Toggle Music">
+    <i class="fas fa-volume-mute" id="music-icon"></i>
+  </button>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>Designed & built with <span class="heart">♥</span> by Sami Azraf</p>
+      <p>Designed &amp; built with <span class="heart">♥</span> by Sami Azraf</p>
       <p class="copyright">© 2026 Sami Azraf. All rights reserved.</p>
     </div>
   </footer>
@@ -459,6 +469,52 @@
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="js/main.js"></script>
+
+  <script>
+    (function bgMusic() {
+      const audio = document.getElementById('bg-music');
+      const btn = document.getElementById('music-toggle');
+      const icon = document.getElementById('music-icon');
+      if (!audio || !btn) return;
+
+      audio.volume = 0.2;
+      let isPlaying = false;
+      let hasAutoStarted = false;
+
+      function toggleMusic() {
+        if (isPlaying) {
+          audio.pause();
+          icon.className = 'fas fa-volume-mute';
+          btn.classList.remove('playing');
+          isPlaying = false;
+        } else {
+          audio.play().then(() => {
+            icon.className = 'fas fa-volume-up';
+            btn.classList.add('playing');
+            isPlaying = true;
+          }).catch(() => {});
+        }
+      }
+
+      btn.addEventListener('click', toggleMusic);
+
+      // Auto-start music on first user interaction
+      function autoStart() {
+        if (hasAutoStarted) return;
+        hasAutoStarted = true;
+        audio.play().then(() => {
+          icon.className = 'fas fa-volume-up';
+          btn.classList.add('playing');
+          isPlaying = true;
+        }).catch(() => {});
+        document.removeEventListener('click', autoStart);
+        document.removeEventListener('scroll', autoStart);
+      }
+
+      document.addEventListener('click', autoStart, { once: true });
+      document.addEventListener('scroll', autoStart, { once: true });
+    })();
+  </script>
 </body>
 
 </html>
